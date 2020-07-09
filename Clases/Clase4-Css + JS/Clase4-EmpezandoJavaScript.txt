@@ -1,0 +1,77 @@
+document.forms[0].addEventListener("submit", e=>{
+	e.preventDefault();
+	alert("cancele el envio por defecto");
+})------->cancela el envio de btn submit
+
+20:50hs - Documentacion de mozilla, mdn
+Implementa paradigma orientado a objetos, paradigma funcional
+basado en prototipos. Debilmente tipado
+
+Obs: comportamiento hosting con 'var'
+puedo llamar a funcion arriba, declarar funcion abajo
+pero al momento de llamarla si bien la tiene la declarada
+no lo tiene implementada y da error indefinido
+Con lo cual se llama a la funcion abajo de donde se la define
+Ej:
+x(); ------>toma la declaracion de la funcion pero no su implementacion
+con lo cual da error,
+var x=function(){
+	console.log("hola");
+}
+x(); ---------->Esto si funciona
+SI declaro a x con let, funciona igual pero tira otro error
+un error de referencia, ya que ni siquiera la considera declarada.
+
+declara los objetos con const:
+ej: const persona1={} o const persona1=new object();
+
+persona1.nombre="PP"; ->le asigna el atributo
+
+persona1.saludar = function(){
+	console.log(´Hola soy $'{this.nombre}'); -->this toma al objeto que
+estoy usando
+}
+
+obs: las funciones que se declaran con => no toman el scope donde pertenecen,
+sino que toman el scope del general (window por ej)
+En cambio con declaraciones anonimas, se toma el scope donde pertenece
+
+Otra forma de declarar objeto con atributos:
+const persona = {
+	nombre: "PP",
+	saludar: function() {
+		console.log("hola soy ${this.nombre}");
+	};
+};
+
+puedo acceder: persona.nombre o persona['nombre'];
+PEROO, esto no es practico porque tengo que hacer lo mismo cada vez que quiera 
+agregar nuevo objeto.
+Entonces lo que se hacer es:
+
+function Persona(nombre, apellido, edad){
+	this.nombre: nombre,
+	this.apellido: apellido,
+	this.edad: edad
+	this.saludar: function....-->pero me ocuparia lugar en memoria por cada nuevo objeto
+entonces lo que se hace es declarar un prototipo
+};
+
+Persona.prototype.saludar = function() {
+	console.log("hola soy ${this.nombre}");	
+};---->para que genere un prototipo en todas las personas que vaya a declarar
+
+
+Herencia:
+function Profesor(nombre, apellido, edad, materia){
+	this.super = Persona;
+	this.super(nombre, apellido, edad);
+	this.materia = materia;
+}
+Profesor.prototype = new Persona();---->para tener el prototipo
+o puedo hacer Profesor.prototype=object.create(Persona.prototype)
+Profesor.prototype.constructor = Persona;--->para no perder el constructor del Profesor
+
+Profesor.prototype.saludar = function(){
+	console.log("hoy soy profesor") ------> Sobreescribe la funcion saludar
+}

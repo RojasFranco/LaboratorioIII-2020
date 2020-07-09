@@ -1,0 +1,27 @@
+*********************	TEMPLATE	*********************
+Template: Es como un patron, una plantilla para hacer algo
+Pagina: placeimg.com podemos pedir imagenes
+
+plantilla.querySelector('img') --->Para traerme un elemento que esta dentro de plantilla
+
+let copia = document.importNode(plantilla, true);--->Importa el nodo plantilla
+(plantilla es un template que creamos en html)
+El segundo atributo de importNode es true si quiero importar todo(con los hijos), false sino.
+
+/******************	MANEJADORES DE EVENTOS	******************/
+JS:
+let btnTraer = document.getElementById("btnTraer");
+btnTraer.onClick = saludar;//MAnejador del evento
+function saludar(){
+    console.log("Hola mundo");
+
+    console.log(event); ------------------> //Muestra cual es el evento que ocurrio
+}
+PERO con esto puedo agregarle solo un manejador al evento, ya que si asigno otro se pisa.
+Entonces si quiero agregarle la funcion despedir?
+-En este caso tengo que usar addEventListener:
+btnTraer.addEventListener("click", saludar)
+btnTraer.addEventListener("click", despedir)
+Si agrego dos funciones, se ejecutaran una despues de la otra automaticamente.
+Si quiero quitar algun manejador: btnTraer.removeEvebtListener("clcik", despedir)
+

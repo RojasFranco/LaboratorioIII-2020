@@ -1,0 +1,59 @@
+IDE:Tienen todas las herramientas para poder programar en un lenguaje. Ej: Visual studio - codeblocks
+Visual Studio Code no es Ide ya que tenemos que utilizar un gestor de paquetes
+Browser: puede 'entender' el html.
+
+ctrl+u en alguna pag, puedo ver su html
+1)Viene el html(aca vienen los requerimientos)
+2) El navegador lo analiza
+3) Viene lista de accesorios para armar page
+
+CheatSheet para ver info, abrevaciones
+
+metadato: Es un dato que define a otro dato
+Es un dato que no es el ppal del archivo
+P ej En una foto, la metadata contiene la fecha de la foco
+el lente con el cual se tomo. Son caracteristicas
+El ppal seria la imagen en si.
+Head: van caracteristicas
+Body: Va el contenido ppal
+
+Instalar: Live server para tener un link y no la direccion local
+
+etiquetas Head:
+<meta name="description" content="Aca va una descripcion de mi page">
+<link rel=shortcut icon" href="./algunIcon" type="image/x-icon">
+<link rel="stylesheet" href="./css/mihojadeestilos.css">
+
+Etiquetas Body:
+<br> --> Salto de linea
+<pre> Para un texto respetando su formato exacto</pre>
+<a href="./Referenciapagina1.html">Click para ir a pag 1</a> 		->Me dirige a esa pagina
+<a href="https://www.google.com.ar" target="_blank">Ir a google</a>	->Me dirige a esa pagina pero en otra pestaña
+<caption>
+<foot>
+
+table:
+rowspan="2" para que ocupe dos filas
+colspan="2" para que ocupe dos columnas
+
+listas:
+
+No ordenadas
+<ul>
+ <li>ALGOO</li>
+ <li>ALGOO nuevo</li>
+</ul>
+
+Ordenadas
+<ol>
+ <li>ALGOO</li>
+ <li>ALGOO nuevo</li>
+</ol>
+
+Lista de definicion
+<dl>
+ <dt> Algo </dt>
+ <dd> Descripcion de algo </dd>
+</dl>
+
+dl - dt- dd (definicion de listas son para definiciones)

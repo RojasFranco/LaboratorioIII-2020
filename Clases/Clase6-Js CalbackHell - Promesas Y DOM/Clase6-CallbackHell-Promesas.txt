@@ -1,0 +1,115 @@
+La comunicacion entre apis es un proceso bloqueante.
+Cuando se libere el stack se realizaran las ejecuciones pendientes
+Si no se libera el stack no se va a poder ejecutar el proceso pendiente
+
+Ejemplo: 
+function operar(a,b, callback){
+
+    return callback(a,b);
+}
+
+/*********************    Una forma: Sincronico    *********************/
+console.log( operar(4,5, sumar) );
+
+function sumar(x,y){
+    return x+y;
+}
+Esto es sincronico.
+
+
+/*****************    Otra forma: Asincronico     *********************/
+function operar(a,b, callback){
+    setTimeout(()=>{
+        callback(a,b);
+    }, 3000);    
+}
+
+operar(4,5, (x,y) =>{
+    console.log(x+y);
+});
+console.log("esto esta al final");
+ DE ESTA MANERA ES ASINCRONICO- Tambien puedo usar setInterval, que
+funciona parecido, pero se ejecuta cada que pasa ese intervalo de tiempo
+
+/*********************	CALLBACK HELL	********************************
+Si tenemos que ejecutar una funcion DESPUES de que se ejecute otra funcion
+tenemos que encadenar las funciones, lo cual no es legible => hay que usar promesas.
+Ej com queda en caso contrario
+
+function operar(a,b, callback){
+    setTimeout(()=>{
+        return callback(a,b);
+    }, 2000);
+}
+
+function potencia(a, callback){
+    setTimeout(()=>{
+        return callback(a);
+    }, 1500);
+}
+
+operar(4,5, (x,y)=>{
+    let suma=x+y;
+    console.log("suma: " +suma);
+    potencia(suma, a=>{
+        pot = a*a;
+        console.log("potencia: "+pot);        
+    })
+})
+console.log("esto esta al final");
+
+/*********************		PROMESAS	****************************
+new Promise()->recibe callback con 2 parametros resolve y reject
+resolve--->es como el return exitoso
+reject---> es como el return no exitoso
+*************POR CONSTRUCTOR**********
+Ej:
+function sumarPromesa(a,b){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(a+b);
+        },2000);
+    });
+}
+function cuadradoPromesa(a){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(a*a);
+        },3000);
+    });
+}
+*****************POR Metodo**************
+function sumarPromesa(a,b){
+    if(isNaN(a) || isNaN(b)){
+        return Promise.reject({error : "no pasaste nros"});
+    }
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(a+b);
+        },2000);
+    });
+}
+
+function cuadradoPromesa(a){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(a*a);
+        },3000);
+    });
+}
+************LLAMADA***************
+Al llamar la funcion tenemos metodo then, y catch:
+then recibe resolve(lo que retorna la funcion cuando salio todo bien)
+catch no hace falta declararlo debajo de cada llamada a promesa, puede
+ir al final, detecta cualquier err.(catch recibe reject(lo que retorna funcion cuando salio mal))
+sumarPromesa(4,5)
+.then((suma)=>{
+    console.log(suma);
+    return cuadradoPromesa(suma);
+})
+.then((cuadrado)=>{
+    console.log(cuadrado);
+})
+.catch((err)=>{
+    console.log(err.error);
+})

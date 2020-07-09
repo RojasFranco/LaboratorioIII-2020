@@ -1,0 +1,57 @@
+Css FlexBox
+
+Posicionamiento:
+display:flex --->se aplica al elemento contenedor
+Es para tenerun contenedor flexible
+
+flex-direction---->se aplica al elemento contenedor
+Es para indicarle su direccion (columna, filas, reverse)
+obs:reverse hace la inversa
+
+flex-grow: 1;---->se aplica al elemento a usar
+se aplica para hacer crecer un elemento mientras haya lugar
+Ej:
+div1{flex-grow: 1}
+div2{flex-grow: 2}--->creceria el doble de div1
+
+flex-shrink---->se aplica al elemento a usar
+funciona de la misma forma que grow pero para encogerse cuando se achique
+la pantalla.
+Ej:
+div1{flex-grow: 1}
+div2{flex-grow: 2}---->Se va achicando el doble que div1
+
+flex-basis:20%---->se aplica al elemento a usar
+hace referencia al elemento. Obs:depende de flex-direction del elemento contenedor
+Por ej: Va a ocupar lugar siendo 20% de ese row o colum.
+
+justify-content: --->Se aplica al elemento contenedor
+Ocupa todo el ancho/alto con la propiedad asignada o posicionar en algun lugar
+Tambien se puede asignar en propiedad que esten en el medio, o en un costado
+Por ej: justify-content:space-between, separa los elementos ocupando todo el ancho
+
+order: nro----->Se aplica al elemento a usar
+Ej:
+div1{order: 2}
+div2{order: 1}---->posiciona al div2 en 1er lugar y añ div2 en 2do
+
+aling-items---->se aplica al elemento contenedor
+Alinea los elementos que estaran contenidos
+aling-items:center--> se alinea en el centro del eje opuesto(x,y)
+
+flex-wrap---->Se aplica en elemento contenedor
+Cuando se ocupe todo el ancho, mande para otro lado el siguiente elemento
+Ej: flex-wrap: wrap-->manda para abajo el sig elemento cuando no entre en el ancho
+
+@media screen and(max width:700px){}-->otras reglas cuando no pase esto
+Ej:
+@media screen and(max-width:700px){
+	header{
+	 flex-direction:column
+	}
+}--->cuando se pase esos 700px, lo va a encolumnar
+
+
+PRACTICAR CON FLEXBOX DEFENSE
+
+

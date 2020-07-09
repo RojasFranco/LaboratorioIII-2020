@@ -1,0 +1,132 @@
+Bootstrap: Framework que facilita el uso de css. Utiliza Jquery y popper
+getbootstrap-->Pagina oficial
+Descargar css+js compilados
+
+Los que terminan en min.css son minificados para que ocupen el menor espacio posible(no son legibles)
+en cambio los demas son mas legibles
+
+En la pagina tambien tenemos BootstrapCDN:
+Tengo los links de donde puedo tener descargada caracteristicas a usar de bootstrap
+Lo puedo usar en lugar de descargar localmente bootstrap.
+
+********************************	Administrador de Paquetes	********************************
+Bower: Administrador de paquetes. Tambien esta npm(que es de node) y se usa gralmente para el back
+
+USAMOS NPM:
+1)Para esto, en la carpeta del Ejercicio --> Click derecho: Abrir en terminal 
+2)en esta carpeta: npm init --->todo siguiente (Esto me crea un package.json)
+3)npm install bootstrap (Esto me crea la dependencia en package.json)
+Tambien puedo instalar: jquery y popper
+Y tengo nueva carpeta "node_modules" con bootstrap, jquery, y popper
+En bootstrap->dist->css tengo todos los css´s
+
+npm search para buscar que paquetes hay disponibles
+
+Si quiero pasar lo que uso a otra persona, puedo copiar y pegar el html y el package.json
+Esta otra persona simplemente abre terminal y escribe "npm install" y automaticamente instala todas las dependencias
+
+********************************	BOOTSTRAP	********************************
+La recomendacion es que lo que haga en Body tiene que ir con un div con la class container
+DIVIDE TODO EN 12 PARTES
+
+.container: Me deja un espacio al principio y final del ancho de pagina, centrando el contenido
+.container-fluid: Ocupa todo el ancho de pantalla
+
+class row: para indicar que es una fila
+class col: para indicar que es columna
+
+class col-x-y
+donde: x es el tamaño para colapsar, y es el ancho(que pueden ir/ocupar entre 1 y 12 de la fila (la fila se divide en 12 partes)). 
+x en tamaños: xs-sm-md-lg-xl. Es la medida en la que colapsan
+Es decir, cuando se superen sus tamaños van a colapsar(puedo ver el pto de colapso en la pagina, estan los tamaños con sus medidas)
+
+************LE PUEDO ASIGNAR DOS TIPOS DE MEDIDAS:************
+por ejemplo
+<div class="col-lg-5 col-xl-8>
+<div class="col-lg-7 col-xl-4> 
+VAN A CAMBIAR CUANDO SE MODIFIQUEN LAS MEDIDAS Y COLAPSEN, PASANDO A OTRA MEDIDA
+Si no le asigno el dato en donde va variable "y", se asignan en partes iguales
+
+
+************************	ALINEACION VERTICAL	************************
+-Tengo que tener espacio vacio.
+*******Para alinear un grupo:
+Tengo que agregarle a la clase padre class"row align-items-center"(puede ser start, center, end)
+
+
+****Para alinear a un solo elemento:
+align-self-start en ese mismo elemento
+
+
+************************	ALINEACION HORIZONTAL	************************
+-Tengo que tener espacio vacio.
+
+*******Para alinear un grupo:
+en clase padre class "row justify-content-center"
+
+****Con un solo elemento:
+en el mismo: por ej class="col-3 offset-2"--->Desplaza dos lugares hacia la derecha
+del espacio que esta ocupando (Siempre y cuando haya lugar).
+Tambien puedo hacer por ej offset-lg-4 que es lo mismo pero cuando este el tamaño de colapso en lg
+
+
+*************** PUEDO DARLES ORDEN **********
+Ej: class="col-order-2"
+
+
+********************	BOTONES		********************
+class "btn", class "btn btn-primary"
+
+
+********************	ANIDAMIENTO	********************
+Se usan los mismos "x" e "y" pero de dos col dentro de otro col por ejemplo
+Se usan los tamaños y las medidas de colapso
+
+********************	TABLAS	********************
+
+Se agrega class="table" y con esto podemos jugar
+por ejemplo class="table table-danger"
+-table table-striped: pinta una y una (combinada)
+-table table-dark: Las oscurece
+-table table-light: Las enclarece(viene por defecto)
+Tenemos Tamaños:
+class= "table-sm", "table-lg"
+
+
+En TH:
+class="thead dark" solo para encabezado
+
+TR:
+tr class="table-danger": Pinta toda esa fila
+
+TD:
+td class="table-success": Pinta solo ese dato
+
+
+********************	FORMULARIOS	********************
+LABEL: Al label se lo encierra en class "form-group"
+INPUT:TEXT: Se lo encierra en class form-control
+
+
+<small class="form-text text-muted">Largo maximo 20 caracteres</small>: ES UNA ACLARACION
+
+Metemos por ejemplo un label y un input dentro de row, para manejar su ancho con "x" e "y"
+
+
+PARA RADIOBUTTNS POR EJEMPLO:
+Dentro de un padre: class="form-check"
+
+tenemos: form-check-inline para tener en la misma linea dos radio btn por ejemplo
+
+********************	 DENTRO DE FORMULARIO	*************
+
+Tienen que haber div conclas form-group
+-label: no llevan clase en particular
+-input: class form-control
+
+-Checkbox: div class form-group form check
+  -inputCheck: form-check-input
+  -labelCheck: form-check-label
+
+-Select: class form-control
+  -option: normal

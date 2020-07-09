@@ -1,0 +1,87 @@
+**********************		TIPOGRAFIA	**********************
+Estos van en un parrafo por ejemplo:
+-tenemos etiqueta "h1" que lo convierte en h1.
+-"display", y "display-x" donde x va del 1 al 4 e indica su tamaño de letra
+-"small" achica la letra
+
+-class="list-unstyled" para listas(ul), le  borra el puntito de viñeta y le quita la sangria
+
+-Alinear una lista (quedaria como una barra de navegacion)
+<ul class="list-inline">
+   <li class="list-inline-item">Item 1</li>
+   <li class="list-inline-item">Item 2</li>
+   <li class="list-inline-item">Item 3</li>
+</ul>
+
+-class="blockquote": Cambia el estilo de un clockquote - Son para citas
+-class= "blockquote-footer"
+- blockquote text-center: Alinea el texto al centro. text-uppercase: Lo pone en mayuscula
+
+<abbr title="Señor">Sr</abbr> (cuando nos paremos sobre la palabra Sr nos mostrara Señor ESTO ES DE HTML)
+a esta le puedo agregar class="initialize"
+
+
+En un <pre> por ejemplo:
+class = "pre-scrolleable", nos genera un scroll vertical
+
+*********************	Jumbotron	*********************
+Nos encierra todo dentro de un cuadro, Por ejemplo:
+<div class="container">
+    <div class="jumbotron">
+        <h1>Venta de Casas</h1>
+        <a href="#" class="btn btn-primary btn-lg" >Ingresar</a>
+    </div>
+</div>
+
+class="jumbotron jumbotron-fluid"
+
+*************************	CARD: Tarjetas	*************************
+1)Tenemos primero etiqueta Card
+2)Tenemos card-body: 
+3) que dentro posee card-tittle, card-text
+
+Tambien esta card-header: Puede tener por ejemplo un <span>Cabecera
+card-footer: Para agregar un pie
+
+***********************		GRUPO CARD	*************************
+Puedo encerrar tarjetas en un grupo(div) : 
+class="card-group", hace que se ajusten entre ellas
+
+class="card-deck": Las agrupa pero deja un espacio entre ellas
+class="card-colums": Las agrupa encolumnandolas, dejando espacio entre ellas
+
+***********************		ALERT	*************************
+Tiene un mensaje de alerta:
+Ejemplo
+    <div class="container">
+        <div class="alert alert-danger">  //Puede ir alert-success
+            <p>Esta operacion no esta permitida</p>
+        </div>
+    </div>
+
+
+********* TENER OPCION DE CERRAR ALERT:
+    <div class="container">
+        <div class="alert alert-success alert-dismissible">
+            <p>Esta operacion fue exitosa</p>
+            <button type="button" class="close" data-dismiss="alert"> <span>X</span> </button>
+        </div>
+    </div>
+
+Si presiono "X" se cierra ese alert
+
+
+***********************		DROPDOWN/DROPUP		*************************
+VEEEEERRRRRR ERROR
+    <div class="container">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Buscadores</button>                        
+            <div class="dorpdown-menu">
+                <a href="htpps://google.com.ar" class="dropdown-item">Google</a>
+            </div>
+        </div>
+
+    </div>
+
+***********************		FontAwesome PARA iconos	*************************
+Puedo descargarlo de VSCode, fontawesome, y buscar en pagina oficial iconos

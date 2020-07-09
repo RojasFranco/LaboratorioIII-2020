@@ -1,0 +1,63 @@
+Recordando, tenemos 12 tipos de nodos.
+Nos interesan nodos de tipo elemento y los de texto(que esten dentro de etiquetas)
+
+document.querySelector('#lista');--->entre comillas como si fuera css para selectores
+
+document.querySelectorAll('p');---->Agarra todos los parrafos
+[22,45,43,67].forEach(e=>console.log(e));
+
+*****Agarrar elementos Hijos:*****
+let lista = document.querySelectorAll('#lista'); --->Obtengo el id lista
+que antes se declaro como lista en html
+let hijos = lista.children;---->Obtiene los hijos
+let primerHijo = list.firstElementChild-----> obtiene el primer hijo
+OjO: let primerHijo = list.firstChild---->Obtendria un enter
+
+**********Si quiero un segundo hijo:**********
+let segundoHijo = hijos[1] 
+o let segundoHijo = primerHijo.nextElementSibling
+
+**********elemento anterior ***************
+let hijoAnterior = hijo.previousElementSibling
+
+**********Si quiero elemento Padre**********
+let padre = hijo.parentElement
+
+********** Obtener padre o abuelo o bisabuelo...**********
+ultimoHijo.closest('div');--->Obtiene el primer 'mayor' div que encuentre
+
+************************* CREAR ELEMENTOS Y ASIGNARLOS*************************
+1°creo en html: <div id="contenedorImagen"></div>
+
+let contenedor = getElementById("contenedorImagen");
+let figure = document.createElement('figure');--->Imagen a manejar(?
+let imagen = document.createElement('img');
+let caption = document.createElement('figcaption'); // Es la leyenda de figure
+//let textoCaption = document.createTextNode("tecnologia pie de foto");-->Crea un texto
+
+contenedor.appendChild(figure);----->Agrega el elementofigure a contenedor
+
+imagen.setAttribute("src", "UbicacionAlgunaImagen");--->Para poner una imagen en 'imagen'
+
+figure.appendChild(imagen);
+//caption.appendChild(textCaption);
+o caption.textContent = "Tecnologia pie figure 2";
+caption.style.textAling = "center"; ---->Para centrar texto
+
+caption.classList.add("fondoVerde");--->LE asigno la clase fondoVerde de CSS
+caption.classList.remove("fondoVerde");--->Le saca esa clase css
+
+imagen.removeAttribute("src");---->Saca ese atributo
+imagen.getAttribute("src");--->Obtener atributo
+
+************************ ************************
+forin --->devuelve indices de array PUEDE SER INCLUSO DE JSON
+forof--->devuelve valor de array. NO LO HACE CON JSON
+
+Si quiero datos de un jason recorro con forin y obtengo el valor de el
+Ej:
+for(const iterador in x){
+	x[iterador]
+}--->x es el array, iterador es el value
+
+

@@ -1,0 +1,52 @@
+Display:
+display: inline; 'convierte' el elemento a elemento en linea
+ocupando el espacio necesario para mostrar su contenido
+
+display: inline-block: nos permite determinar el width y height
+sirve para dimensionar
+
+Box-sizing:
+box-sizing: content-box -> es el que viene por defecto
+se aplica a la caja del contenido
+Por ej: si le asigno width 400px, se asigna exactamente eso al elemento.
+
+box-sizing: border-box ->tiene en cuenta margin, padding
+border y el contenido para el tamaño.
+Por ej: si le asigno width 400px, esto se divide en las 4 caracteristicas
+
+Medidas:
+50vh ->es el 50% de la ventana horizontalmente(si se achica ventana, tambien lo hara)
+10em ->10x tamañano de la M por defecto del navegador
+
+text-decoration: underline; ->subrayar;
+text-decoration: none; -> saca subrayado si es que lo tiene
+text-transform: uppercase; ->convierte letras en mayuscula
+letter-spacing: 3px; ->separa las letras
+word-spacing: 10px; ->separa las palabras
+text-shadow: 5px 3px red; ->le agrega un sombreado
+font-family: arial; ->tipo de fuente
+(puedo descargarme algun tipo de
+tipografia de google, copiar ttf en una carpeta 'fonts por ej'
+luego en css declaro:
+@font-face{
+	font-family:miNamefont;
+	src: url(../fonts/Descargado.ttf);
+}
+y por ultimo: font-family: miNamefont
+)
+ver: font-awesome(en google) para iconos - video  19:40hs
+(buscar cdn que es un link, y en el header de html creo
+un link como css pero con href:ese cdn
+luego agarro el tag de font-awesome y lo pego en donde 
+quiera verlo(Esto en codigo html))
+cdn: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
+
+Imagenes:
+opacity: .5; ->genera opacidad (va entre 0 y 1)
+position:relative;
+left: 50px; lo muevo 
+transition: opacity 2s, left 2s; ->para que esos cambios los haga en 2 segundos
+
+img:hover{
+	left: 0px; para que se reposicion cuando me apoye en la imgen
+}

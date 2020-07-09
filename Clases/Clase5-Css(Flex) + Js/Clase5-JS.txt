@@ -1,0 +1,26 @@
+JS trabaja de forma asincronica - Concurrente - No bloqueante
+En un solo hilo
+Ejemplo
+funcion setTimeout(algunaFuncion, tiempoDemoraEjecucion)
+
+setTimeout(function (){
+   console.log("se ejecuto callback");
+   }, 2000 );
+
+console.log("esto esta dsps del timeout");
+
+se ejecuta primero "esto esta despues del timeout, ya que lo va a ejecutar
+asincronicamente. 2 segundos despues "se ejecuto callback".
+
+CONCURRENCIA
+Concurrencia: por ej dos filas de personas para una caja
+ambos avanzan de a 1 vez por cada fila.
+
+Proceso No Bloqueante
+No tiene tiempos muertos
+Por ej, un mozo: atiende a varias personas, no queda con el proceso bloqueado
+sin atender hasta que se termine de cocinar el pedido
+
+
+
+

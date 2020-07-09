@@ -1,0 +1,173 @@
+Ver 19:50 como uso FontAwesome para cargar index.html
+
+DEF: Es hacer algo que ocupe varias lineas en lo mas corto posible.
+
+A una tabla por ejemplo que creo en JS tomando de un servidor, le puedo agregar
+la clase "table" para que bootsrap la detecte y le de un formato
+
+****************************	FILTER	****************************
+- ME GENERA UN NUEVO ARRAY, NO MODIFICA
+- RECIBE UN CALLBACK QUE puede recibir 3 parametros: (no necesariamente tengo que recibir los 3)
+1er parametro: elemento
+2do: indice del elemento
+3er: el mismo array
+-DEVUELVE TODOS LOS ELEMENTOS QUE EN EL CALLBACK DEN COMO RESULTADO TRUE
+
+let arrayNumeros = [3,5,2,6,1,7,4];
+let nrosPares;
+nrosPares = arrayNumeros.filter( function(elemento){
+    return !(elemento%2);
+})
+console.log(nrosPares);
+
+*****Forma corta
+let arrayNumeros = [3,5,2,6,1,7,4];
+let nrosPares;
+nrosPares = arrayNumeros.filter(e=>!(e%2));
+console.log(nrosPares);
+
+
+****************************	MAP	****************************
+- ME GENERA UN NUEVO ARRAY, NO MODIFICA
+- No necesariamente me devuelve el mismo tipo de dato del array original
+- Recibe un callback que puede recibir elemento, indice, y array(no obligatorios)
+- Agrega al nuevo array todo lo que retorne el callback
+
+let numeros = [3,5,6,1,7,4];
+let dobleDeNumeros;
+
+dobleDeNumeros = numeros.map(e=>(e*2));
+console.log(dobleDeNumeros);
+
+OTRO EJ:
+
+let personas = [ {nombre: "juan", edad: 30}, {nombre: "andrea", edad:25}  ]
+let nombres;
+nombres = personas.map(e=>e.nombre);
+o
+nombres = personas.map(e=> {
+   return {nombre: e.nombre} )
+};
+
+****** OBS
+hasOwnProperty--->para verificar si tiene definida esa propiedad
+
+
+****************************	REDUCE	****************************
+- Devuelve un valor unico
+-Recibe callback que puede recibir 4 elementos, y un parametro opcional:
+1ro elem: Valor previo o anterior
+2do elem: Valor actual
+3ero: Indice
+4to: El mismo array
+-Si en cambio recibe el parametro opcional,el 1ro seria el actual, y el parametro opcional seria el previo
+de la primer iteracion, los siguientes previos seria lo que retorna el callback
+
+let numeros = [2,3,4,5,1];
+let total;
+
+/* UN EJEMPLO
+total = numeros.reduce( (previo, actual, indice, array)=>{
+	console.log(previo,actual,indice);
+	return "saraza"
+},0 );
+console.log(total);
+Mostraria 0,2,0 - saraza,3,1 - saraza,4 ,2 etc
+*/
+
+//EJ SUMAR
+total = numeros.reduce( (previo, actual, indice, array)=>{
+	console.log(previo,actual,indice);
+	return previo+actual;
+},0 );
+console.log(total);
+
+****OTRO EJEMPLO: quiero la suma de las edades de personas
+
+let personas = [ {nombre: "juan", edad: 30}, {nombre: "andrea", edad:25}  ]
+let totalEdades;
+
+totalEdades = personas.reduce( (prev,actual)=> previo+actual.edad , 0);
+console.log(totalEdades);
+
+******* PENSAR COMO DEVOLVER PROMEDIO CON REDUCE (usando solo una funcion(map,reduce, o filter))
+
+****************************	SORT	****************************
+let numeros = [1,6,21,8,2];
+console.log(numeros.sort());
+- MUESTRA : 1,2,21,6,8 porque los toma como cadena de texto
+Entonces le paso algo a sort.
+PUEDE RECIBIR CALLBACK que recibe dos parametros: primero y segundo
+si es <0 retorna el segundo, si es >0 el primero
+
+let numeros = [1,6,21,8,2];
+console.log( numeros.sort(a,b)=> a-b);
+
+
+****OTRO EJ:
+
+let personas = [ {nombre: "juan", edad: 30}, {nombre: "andrea", edad:25}  ]
+
+console.log( personas.sort(a,b)=>a.nombre.localCompare(b.nombre)) );;
+
+***********************************OBS: LOCALCOMPARE para poder comparar
+
+
+******************************	SACAR REPETIDO	******************************
+
+1) DESTRUCTURACION:
+
+let numeros = [21,43,65];
+let [a,b,c] = numeros; -------------> Me carga las variables a, b, y c con el valor de nros correlativo
+
+
+let persona = {nombre:"juan", edad:30, sexo: "m"};
+let {nombre, edad, sexo} = persona; ---->Me carga cada dato
+puede estar en cualquier orden, pero siempre respetando los campos
+P ej: let {edad, nombre, sexo} = persona;
+
+function sumar(a,b, ...c){	//...c para pedir parametro opcional
+   let rta = a+b;
+   return c.reduce( (prev,actual)=> prev+actual ),rta);
+}
+
+console.log( sumar(5,3,5,4,3)); (El 5,4,3 finales van a ir al parametro ...c)
+
+
+2)
+OTRA COSA: IMP!!
+let v1 = [3,1,2];
+let v2 = v1; -----------> GUARDA REFERENCIA
+Si hago v2[0]=100;-----> CAMBIO TAMBIEN A v1
+
+********SI QUIERO TENER UNA COPIA Y NO LA REFERENCIA PARA EVITAR ESTO:
+
+let v1 = [3,1,2];
+let v2 = [...v1]; ----> DE ESTA FORMA SOLO MODIFICO A v2 cuando haga cambios en el.
+
+
+
+3)
+
+let x = [3,2,5,6,4,3,6,3];
+
+let miSet = new Set(x); --------------> SACA LOS REPETIDOS, PERO MISET ES UN OBJETO
+
+SI LO QUIERO EN ARRAY:
+let sinRepetidos = [...miSet];
+
+SI QUIERO HACERLO TODO DIRECTAMENTE:
+let x = [3,2,5,6,4,3,6,3];
+Array.prototype.unique = function(){ //unique o el nombre que quiera para mi prototipo
+   return [...new Set(this)];
+}
+
+console.log(x.unique());
+
+
+EJERCICIO:
+2 select
+
+leer archivo json y cargar los paises en el primer select, ciudades tiene que estar vacio
+y cada vez que el usuario selecionna un pais el 2do select tiene que cargarse con las ciudades
+del pais elegido

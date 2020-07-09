@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: thistle;
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: unset; */
+    
+}
+
+div{
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;    
+}
+
+#div1{
+    order:3
+    
+}
+
+#div2{
+    order:2;
+}
+
+#div3{
+    order:1;
+}
+
+/*
+#div1{
+    flex-grow: 2;
+    flex-shrink: 2;
+    
+}
+
+#div2{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
+}
+*/

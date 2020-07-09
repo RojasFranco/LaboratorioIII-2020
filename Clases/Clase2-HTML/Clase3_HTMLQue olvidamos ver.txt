@@ -1,0 +1,21 @@
+Que es responsive?
+-Se adapta a distintos tamaños de la pantalla
+
+Podemos embeber servicios en mi pagina:
+-Por ej en youtube--compartir--insertar:
+tengo etiqueta iframe, esto es para embeber un video(por ej) en mi page web
+esta etiqueta puedo copiarla directamente en mi Body html y ya lo tengo embebido
+Esto puedo hacerlo con google maps, instagram tambien por ejemplo
+
+etiqueta blockquote: Es para una cita
+
+Etiquetas principales: es para dividir en secciones la pagina
+<header>: Titulos principal. Aca tiene que estar el h1
+<section>: una seccion de la pagina. Tiene contenido relacionado. 
+Generalmente arranca con un h2,y termina donde empieza otro. Tiene contenido relacionado.
+<main>: Es un section, pero es el section PRINCIPAL
+footer: Pie de pagina
+<nav>: Enlaces agrupados
+<article>: es como articulo de un diario. Una unidad independiente
+<aside>: barra de nav lateral que no tiene nada que ver con la pagina. Por ejemplo: anuncios, publicidad
+<div>:para alguna parte 'aislada' que necesite agrupar

@@ -1,0 +1,46 @@
+<form action="pagina que quiero pegarle" method="Metodo con el cual le pego a la pag o al backend">
+
+<input type="submit"> --->Es un boton, cada navegador le asigna un value o se puede asignar
+-Al hacerle click o enter envia esa info(se refresca la pagina)
+<button> </button> es un submit por defecto, si le agrego un type lo cambio
+-Es para que no envie info por url por ej
+
+name="algo"-->Es el nombre de la variable, si la envio se asigna en la url
+
+Problema con var
+var x=20
+if(true)
+{ var x=50}-->Me modifica el x=20 tambien, quedando x=50 en todo ambito
+En cambio con let x, esto se soluciona.
+
+window.addEventListener('load', asignarManejadores); Se usa para que al cargar pagina ejecute la funcion
+asignarManejadores, ya que sino el html se lee 1ro script antes de tener cargada
+y en ese caso txtClave seria null(no llega hasta ver esa parte)
+
+En lugar de window puedo usar cualquier elemento de mi html.Por ej un button play
+en JS: play.addEventListener("click", ()=>video.play()) Que reproduce video cuando hago click
+
+en html:
+required->para que no lo puedan enviar vacio (por ej en txt)
+readonly-> para que no pueda setearle algun valor
+
+<fieldset>---> para encuadrar
+<legend> lo que iria de 'titulo' </legend>
+Datos
+<fieldset>
+
+<input type=checkbox>-->para seleccionar opcion
+<input type=radio>-->para seleccionar solo 1 opcion (las opciones se verifican con prop name)
+<select>   <option>opcion1 </option>	</select>->Para opcines
+con option puedo usar <optionGroup label="Pais por ej"> para que aparezcan separados dos optionGroup por
+ejemplo con lo que esta en label en negrita
+<textarea cols="30" rows="10">  </textarea>---->Para parrafo
+<video src="ubic" width="tamano" autoplay(para q se reproduzca solo)|| controls(para poder pasar play etc)
+ poster="direccion"(Para que aparezca una imagen de fondo) >
+
+<dialog> Solo se va a ver cuando le haga open
+
+</dialog>
+en JS se puede usar dialog.SetAttribute("open", "true") Al hacer un click por ejemplo
+tambien esta dialog.removeAttibute("open")
+

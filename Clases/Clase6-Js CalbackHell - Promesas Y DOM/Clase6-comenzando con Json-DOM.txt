@@ -1,0 +1,15 @@
+JSON.stringify(dato)--->convierte el dato a un string JSON
+JSON.parse(dato)----->Convierte el dato(que es json) a un objeto
+
+/******************	DOM	*****************/
+window es el this global(console.log(window) puedo ver sus atributos)
+document--->Es el documento html
+
+let head = document.getElementsByTagName("head")[0];-->obtengo el headHTML
+head.childNodes[0].nodeType--->obtiene tipo de nodo del 1er hijo
+head.childElementCount---->obtiene cantidad de ELEMENTOS
+head.children---->Obtiene los nodos hijos ELEMENT
+
+Nos interesan los nodos textos y los nodos elementos
+nodos textos:Por ejemplo lo que este dentro de un parrafo, titulo
+nodos elementos: los elementos, meta, tittle.

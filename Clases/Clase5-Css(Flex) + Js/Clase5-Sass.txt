@@ -1,0 +1,39 @@
+20:40hs
+Instalar sass en vs code
+en carpeta css, creo pagina.scss. Puedo hacer aca todo lo que es css
+
+y al compilar esto me genera mi pagina.css, pero es compatible en todos
+los navegadores.
+en html link le paso esa pagina.css
+incluso puedo ver el codigo scss en el navegador con f12, por mas que
+le haya pasado referencia a pagina.css
+
+Ademas puedo declarar variables en scss ya que estas no se compilan
+variables con '_' para que no compile o genere archivos innecesarios
+por ej: $odd_article_color : gray; y esta variable la puedo utilizar
+en algun lugar de la pagina
+De esta manera puedo declarar variables al principio, para tener mas usabilidad,
+ya que si quiero cambiar el color por ej de algo, en lugar de estar
+cambiandolo en cada lugar que lo haya usado, lo cambio solo en la variable.
+
+Tambien por ej:
+en lugar de usar nav a{algo} , puedo hacer nav{ a{} }
+-Si quiero que se hijo directo: nav{ $>a{} }
+
+Otro uso, especie de funcion
+Creo un _mixins.scss con:
+@mixin mx_footer_header($color: black){
+    background-color: $color;
+}
+en pagina.scss @import '/_mixins.scss'
+y donde quiero usarlo
+por ej: header: background-color: @include mx_footer_header(white)
+ese white va a reemplazar el color: black(que es el por defecto que declare)
+
+
+Puedo crear tambien _colors.scss con:
+$color = green;
+
+y en donde quiera usarlo:
+primero @import '_colors.scss'
+y el lugar donde quiera usarlo, por ej background-color: $color

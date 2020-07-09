@@ -1,0 +1,76 @@
+Puedo copiar el link de pagina oficial o en consola: npm install jquery
+y copiar <script src="./node_modules/jquery/dist/jquery.js"></script>
+
+$(function(){	//Es como el ready
+
+//Selectores
+
+$("p").css("background-color", "red");
+
+$("#algo").click(function(){
+ 
+ $(this) .css("background-color", "red"); //hace referencia a #algo
+
+})
+
+});
+
+$("#algo").on("click", function(){
+//Lo que quiera hacer xD aunque no se usa esto
+$("#algo").off("click", manejador)  // Puedo sacar ese manejador
+})
+
+************************	EFECTOS		************************
+hide();
+show();
+toggle(); --->Para ocultar, luego mostrar
+fadeOut(); Para opacar el color de fondo (opacidad)
+fadeIn();
+fadeToggle();
+slideToggle() ----> Desliza hacia arriba/abajo
+
+.animate("height":"+100px", "border": "1px solid red")
+
+
+
+en html:
+<select>
+option Fem
+option Masc
+
+en js:
+$("select").on("change", function(){
+  console.log(this).first("option:checked").val();
+})
+
+*********************	AGREGAR HTML	*********************
+
+$("p").before("<p>Parrafo nuevo agregado</p>") //Agrega un parrafo antes
+$("p").after("<p>Parrafo nuevo agregado</p>") //Agrega un parra despues
+
+
+//append, prepend, siblings, next, children, parent
+
+puedo tener en otro archivo por ej div.html:
+<div>
+<p> Esto es un parrafo<p>
+<div>
+
+y en el script:
+$("body").load("./div.html"); // ME CARGA EN EL BODY ESA 'PAGINA'
+
+$("body").load("./div.html p"); // ME CARGA EN EL BODY SOLO EL PARRAFO
+
+
+********	AJAX	***************
+
+$.get("url", function(data, status){
+console.log(data)
+console.log(status)
+})
+
+$.post("url", objeto que mando,function(data, status){
+console.log(data)
+console.log(status)
+})
+

@@ -1,0 +1,26 @@
+La idea es no llamar a todos los script en el html.
+Por ejemplo si tengo un script de Entidades, en lugar de llamarlo en html
+lo que se hace es que el script que quiera utilizar esas Entidades llame
+lo que necesite desde él mismo(osea desde el script).
+Ojo, antes en la clase entidades tengo que agregar 'export' en lo que quiera
+'compartir' o exportar.
+Ejemplo:
+- entidades.js:
+export class Persona{
+    id;
+    nombre;
+    constructor(id, nombre){
+        this.id=id;
+        this.nombre=nombre;
+    }
+    Saludar(){
+        console.log("Hola soy ${this.nombre}");
+    }
+}
+const PI = 3.14;
+-script.js:
+import { Persona } from "./entidades.js";// PUEDo poner alias {Persona as pepe}
+const p1 = new Persona(1, "Juan", 30);
+p1.Saludar();
+-index.html:
+<script src="./js/script.js" type="module"></script>

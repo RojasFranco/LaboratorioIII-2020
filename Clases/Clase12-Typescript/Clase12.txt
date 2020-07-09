@@ -1,0 +1,56 @@
+Como avisar a Jquery que usamos typescript
+
+Iniciamos en npm: npm init
+-instalamos jquery: npm install jquery
+
+-Para avisar a TS que usamos jquery: npm install @types/jquery
+
+en consola: tsc -init (PARA iniciar)
+ tsc (para compilar)
+
+*********************	TYPESCRIPT:	*********************
+Recordar que puedo usar typescript lang para probar cosas en linea
+
+*Atributos: private_edad: number; se pone dos puntos y se especifica el tipo de dato
+
+*Funciones: nombre funcion: tipo de dato que retorna{..funcion}
+    saludar(): void{
+        console.log(this.nombre);
+    }
+
+*Propiedades: Parametros del mismo modo: nombre: tipoDato, y para get nombre(): tipoRetorno
+    set edad(edad: number) {
+        this._edad = edad;
+    }
+
+    get edad(): number{
+        return this._edad;
+    }
+
+*Interfaces: Se pueden implementar, y, si bien en javascript no se usan,
+de hecho no aparece ninguna interface cuando traspilo, funciona
+
+*Tipo de dato(esto es por js):
+
+let tupla = ["pepe", 24, true] PUEDO pasarle cualquier cosa (Esto es por js)
+let edad: number | string; Puede ser cualquiera de esos dos tipos (en ts)
+let g: any; ----> Esto es lo que usa siempre js
+
+let algo: Moto & Auto; (Auto y Moto son clases). Esto aplica las dos clases
+
+algo = new Auto("Peugeot") as Moto&Auto; PAra que funcione, sino tira error
+
+
+****************
+type Heroe = {nombre: string, edad: number, saludar: (x:string)=>string};
+
+let Batman: Heroe = {nombre: "Batman", edad:22, saludar: function(x: string):string{return "PEPE"}};
+let Jocker: Heroe = {nombre: "elcomodin", edad: 25};
+
+**************	namespace
+
+namespace Matematica{
+	export const PI = 3.14; // SE AGREGA EXPORT PARA PODER USARLA AFUERA
+}
+
+let c = Matematica.PI;

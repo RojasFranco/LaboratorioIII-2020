@@ -1,0 +1,36 @@
+Documentacion: Typescript lang 
+
+/*
+class Persona{
+ public nombre: string
+ constructor(nombre: string){
+    this.nombre = nombre;
+ }
+}*/
+
+
+En VSCode, abro terminal:
+1)npm install typescript -g // me instala, el -g es para que sea global
+
+
+2)tsc -init: me crea un tsconfig.json // Aca puedo configurar si no quiero strict, 
+- en target la version de esmaScript
+- "outDir"-->directorio de salida, generalmente es ./dist si hago esto:
+me va a crear carpeta dist y dentro el script
+- "watch": true  queda 'escuchando', cualquier cambio que haga en los archivos.ts se traspilara
+
+-"sourceMap": true, //Me mapea a los archivos ts, me crea un archivo.js.map
+De este modo en el navegador, en origines puedo poner breakpoints en los ts para debuggear
+
+
+- puedo agregar, despues de las {} que estan incluidas en el compiler:
+"include" : ["./src/**/*"] --_>Para tener guardados los script en carpeta src, y levantarlos de ahi
+seria directorio de entrada
+
+-"exclude": ["./node_modules", "./cualquiera.ts"]; Para excluir
+
+3)tsc //Va a buscar todos los archivos .ts y los va a traspilar a archivo.js
+
+
+
+

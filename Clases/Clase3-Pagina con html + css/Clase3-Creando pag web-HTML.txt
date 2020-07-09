@@ -1,0 +1,24 @@
+formato .svg--la imagen se dibuja a traves de expresiones/formulas matematicas
+para cada tamaño lo vuelve a recalcular, lo cual hace que la imagen no tenga posibilidad de verse pixelada
+
+Para marcas registradas: usamos character entity 
+por ejemplo &copy; para marca de copyright
+
+etiqueta <em>20/10/2019</em> --->funciona como <i>(que es etiqueta visual de letra italica)
+pero 'em' es semantica, y 'i' es solo grafica
+
+1°Barrido: Agregamos Todo texto
+2°Barrido: Agregamos enlaces
+3°Barrido: Agregamos Imagenes
+
+CSS:
+background-image: url("ubicacion"); --->Para imagen de fondo
+background-repeat: no-repeat;-->Si laimagen es +chica del tamaño donde iria, no se repita
+div > h2{}---->etiqueta para marcar que use los h2 directos provenientes de div
+div h2{}---->etiqueta para marcar que use los h2 provenientes de div
+
+selector atributos:
+[href*="google"]{}--->selecciona las referencias a google
+
+seudoclases:
+p:hover{}---->cuando me posiciono sobre p.
