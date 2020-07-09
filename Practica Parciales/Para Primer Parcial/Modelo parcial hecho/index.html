@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Ejercicio</title>
+    <link rel="stylesheet" href="./css/miEstilo.css">
+    <script src="./js/script.js" defer type="module"></script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Informacion del anuncio</legend>
+            <form action="" class="Formulario" id="formulario">
+                <label for="">Titulo</label>
+                <input type="text" name="" id="txtTitulo" placeholder="Titulo...">
+                <br>
+                <label for="">Transaccion:</label>            
+                <div class="radioButtons">
+                    Venta<input type="radio" name="transacciones" id="radioVenta" style="margin-left: 65px;" value="venta">                
+                </div>            
+    
+                <div class="radioButtons">
+                    Alquiler<input type="radio" name="transacciones" id="radioAlquiler" style="margin-left: 50px;" value="alquiler">
+                </div>                        
+                <br>
+                <label for="">Descripcion</label>            
+                <input type="text" name="" id="txtDescripcion" placeholder="Descripcion...">
+                <br>
+                <label for="">Precio</label>
+                <input type="text" name="" id="txtPrecio" placeholder="Precio...">
+                <br>
+                <label for="">Cantidad De Baños</label>
+                <!-- <input type="text" name="" id="txtCantBaños" placeholder="Cantidad de baños..."> -->
+                <input type="number" name="" id="txtCantBaños" placeholder="Cantidad de baños..." min="0" max="4">
+                <br>
+                <label for="">Cantidad de Autos</label>
+                <input type="text" name="" id="txtcantAutos" placeholder="Cantidad De Autos...">
+                <br>
+                <label for="">Cantidad de Dormitorios</label>
+                <input type="text" name="" id="txtCantDormitorios" placeholder="Cantidad De Dormitorios...">            
+            </form>                
+        </fieldset>    
+        <br>
+        <button type="button" id="btnGuardar">Guardar</button>
+    </div>    
+    <br><hr><hr>
+    <br>
+    <div id="divAcciones"></div>
+    <br>
+    <div>
+        <div class="botonesModificar" id="contenedorBotones">
+            <button class="botones" id="btnGuardarDos"> Guardar</button>
+            <button class="botones" id="btnEliminar"> Elminar</button>
+            <button class="botones" id="btnCancelar"> Cancelar</button>    
+        </div>
+        <br>
+        <div id="paraTabla"></div>
+    </div>    
+    <br><br>
+    <div id="paraSpinner"></div>
+</body>
+</html>

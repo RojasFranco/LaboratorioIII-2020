@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.miTabla{
+    width: 60vw;    
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th, td{
+    width: 14vw;
+    border: 1px solid;
+}
+
+.Formulario{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 500px;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+.radioButtons{
+    display: flex;    
+}
+
+.Formulario input{
+    background-color: rgb(199, 194, 194);
+    height: 30px;
+    border-radius: 10px;
+}
+
+#btnGuardar{
+    background-color: rgb(78, 168, 78);
+    color: white;
+    height: 40px;
+    width: 70px;
+    align-self: flex-start;
+}
+
+.botonesModificar{
+    display: flex;
+    justify-content: flex-start;
+}
+#contenedorBotones{
+    display: none;
+}
+
+.botones{
+    height: 40px;
+    width: 70px;
+    margin: 5px;
+    color: white;    
+}
+#btnGuardarDos{
+    background-color: rgb(78, 168, 78);    
+}
+
+#btnEliminar{
+    background-color: orange;    
+}
+
+#btnCancelar{
+    background-color: blue;
+}

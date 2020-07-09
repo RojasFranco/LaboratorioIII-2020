@@ -1,0 +1,26 @@
+body{
+    background-color: sienna;
+}
+.miFormulario{
+    border: 1px solid;
+    width: 500px;
+    padding: 20px;
+    background-color: teal;
+}
+
+.misLabels{
+    color: snow;
+}
+
+.misTxt{
+    float: right;
+}
+
+.botones{
+    
+    text-align: center;
+}
+
+.miFieldset{
+    background-color: yellowgreen;
+}

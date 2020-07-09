@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="./css/formularios.css">
+</head>
+<body>
+    <h1>Formularios</h1>
+
+
+    <form action="" class="miFormulario">
+        
+        <label for="txtNombre" class="misLabels">Nombre</label>
+        <input type="text" name="nombre" id="txtNombre" autocomplete="off" class="misTxt" placeholder="Ingresa tu nombre...">
+               
+        <p>
+            <label for="" class="misLabels">Apellido</label>
+            <input type="text" name="apellido" id="txtApeliido" class="misTxt">
+        </p>        
+        <p>
+            <label for="" class="misLabels">Contraseña</label>
+            <input type="password" name="password" id="txtPassword" class="misTxt">
+        </p>
+
+        <div class="botones">
+            <button>Ingresar</button>
+            <button type="button">Cambiar Pass</button>
+        </div>              
+        <input type="reset" >
+    </form>
+    <br>
+
+    <h2>Deportes con checkBox</h2> 
+
+    <input type="checkbox" value="Futbol" name="checkDeportes" checked> Futbol
+    <input type="checkbox" name="checkDeportes" id="" value="Basket"> Basket
+    <input type="checkbox" name="checkDeportes" id=""> Tenis
+
+    <h2> Carrera con RadioButton</h2>
+    <input type="radio" name="radioCarreras" id="ingenieria" checked> ingenieria
+    <input type="radio" name="radioCarreras" id="" >Abogacia
+    <input type="radio" name="radioCarreras" id=""> Licenciatura
+
+
+    <form action="" class="miFormulario">
+        <h2>Lenguajes</h2>
+        <select name="lenguaj" id="">
+            <optgroup label="Back">
+                <option value="1">Java</option>
+                <option value="2">C#</option>
+                <option value="3">Python</option>
+            </optgroup>
+            <optgroup label="Front">
+                <option value="4">Css</option>
+                <option value="5">HTML</option>
+                <option value="6">JS</option>
+            </optgroup>
+
+            
+        </select>
+        <input type="submit">
+
+        <textarea name="comentarios" rows="5" cols="3"></textarea> 
+
+    </form>
+
+    <h2>FieldSet</h2>
+
+    <fieldset class="miFieldset">
+        <legend>Datos Particulares</legend>        
+        Sexo <input type="text" name="ddd" id="" placeholder="indique sexo...">
+        <br><br>
+        Edad <input type="number" name="" id="">        
+    </fieldset>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+body{
+    background-color: darksalmon;
+}
+
+.miTabla{
+    border: 2px solid;    
+    text-align: center;      
+    border-collapse: collapse;
+    color: navy;
+}
+
+th, td {
+    min-width: 150px;
+    border: 1px solid;    
+    
+}    
+th{
+    background-color: darkslategrey;
+    color: floralwhite;
+}
+td{
+    background-color: khaki;
+    color: maroon;
+}
+

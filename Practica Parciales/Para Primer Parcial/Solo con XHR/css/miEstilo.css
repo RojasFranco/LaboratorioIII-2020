@@ -1,0 +1,88 @@
+@font-face{
+    font-family: miFuente;
+    src: url("../Fuente/varsity_regular.ttf");
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    font-family: miFuente;    
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 500px;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-family: miFuente;    
+}
+
+.botones{
+    margin: 5px;
+    height: 40px;
+    width: 80px;
+    color: white;
+}
+
+#formulario > input{
+    background-color: rgb(221, 214, 214);
+    border-radius: 10px;
+    height: 30px;
+}
+
+.radioBtns{
+    display: flex;        
+    align-items: center;
+}
+
+
+#btnGuardar, #btnModificar{
+    background-color: rgb(20, 150, 48);
+}
+
+#btnEliminar{
+    background-color: rgb(219, 155, 17);
+}
+
+#btnCancelar{
+background-color: rgb(13, 13, 155);
+}
+
+#botonesModificar{
+    display: none;
+}
+
+/*
+#contenedorTabla{
+    width: 100vw;    
+}*/
+
+.miTabla{
+    background-color: beige;
+    text-align: center;
+    border-collapse: collapse;        
+    width: 60vw;
+    /* overflow-x:scroll; */
+}
+
+td{
+    height: 250px;
+    border: 1px solid;        
+}
+th{
+    border: 1px solid;    
+}
+
+@media (max-width:800px){
+    #botonesModificar{
+        flex-direction: column;
+    }    
+
+}

@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+.miTabla{
+    background-color: beige;
+    width: 70vw;
+    border-collapse: collapse;    
+}
+
+th,td{
+    width: 33vw;
+    text-align: center;
+    height: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid;
+}

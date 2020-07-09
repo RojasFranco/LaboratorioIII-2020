@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/miEstilo.css">
+    <script src="./js/script.js" defer type="module"></script>
+</head>
+<body>
+    <div id="contenedorFormulario">
+        <fieldset>
+            <legend>Informacion del anuncio</legend>
+
+            <form id="formulario">
+                <label for="">Titulo</label>
+                <input type="text" placeholder="Titulo" id="txtTitulo">
+
+                <label>Transaccion</label>
+                <div class="radioBtns">
+                    <label for="">Venta</label><input type="radio" name="radiosTransacciones" id="radioVenta" value="venta">
+                </div>
+                <div class="radioBtns">
+                    <label for="">Alquiler</label><input type="radio" name="radiosTransacciones" id="radioAlquiler" value="alquiler">                
+                </div>                    
+
+                <label for="">Descripcion</label>
+                <input type="text" placeholder="Descripcion" id="txtDescripcion">
+
+                <label for="">Precio</label>
+                <input type="text" placeholder="Precio" id="txtPrecio">
+
+                <label for="">Cantidad De Baños</label>
+                <input type="number" name="" id="txtCantBaños" placeholder="Baños" min="0" max="4">
+
+                <label for="">Cantidad De Autos</label>
+                <input type="number" name="" id="txtCantAutos" placeholder="Autos" min="0" max="4">
+
+                <label for="">Cantidad de Dormitorios</label>
+                <input type="number" name="" id="txtCantDormitorios" placeholder="Dormitorios" min="0" max="4">
+            </form>            
+        </fieldset>        
+        <button type="button" id="btnGuardar" class="botones">Guardar</button>
+    </div>
+
+    <div id="contenedorTabla">
+        <div id="botonesModificar">
+            <button id="btnModificar" class="botones">Modificar</button>
+            <button id="btnEliminar" class="botones">Eliminar</button>
+            <button id="btnCancelar" class="botones">Cancelar</button>            
+        </div>
+    </div>
+    <br>
+    <div id="paraSpinner"></div>
+</body>
+</html>

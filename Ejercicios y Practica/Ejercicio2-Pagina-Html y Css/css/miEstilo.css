@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;    
+}
+
+header{
+    background-image: url("../img/header.jpg");
+    
+    height: 850px;
+    background-size: 1350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header>nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.enlacesHeader a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+h1{
+    color: white;
+    padding: 50px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* section*/ h2{
+    text-align: center;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;    
+}
+
+.masSobreNosotros{
+    height: 300px;
+    display: flex;
+    
+}
+.masSobreNosotros>span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;    
+    width: 100vh;
+}
+.masSobreNosotros>span>h3{
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* main{
+    height: 600px;
+} */
+
+.sectoresMain{
+    display: flex;
+    height: 500px;    
+}
+
+.sectoresMain>span{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    width: 100vh;
+    border: 1px solid gray;
+    margin: 20px;
+}
+
+.sectoresMain img{
+    height: 200px;
+    width: 400px;
+}
+
+.sectoresMain h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sectoresMain a{
+    background-color: rgb(212, 140, 5);
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#anuncio{
+    display: flex;
+    justify-content: flex-end;
+}
+#anuncio a{
+    color: white;
+    background-color: rgb(45, 177, 45);
+    height: 50px;
+    width: 120px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
