@@ -68,8 +68,8 @@ function TraerDatos(){
     else{
         listaMascotas=JSON.parse(localStorage.getItem("listaMascotas"));
         CrearTablaConDatos(listaMascotas);    
-        let tdsTabla = document.getElementsByTagName("td");
-        cargarEventosTdsTabla(tdsTabla);
+        // let tdsTabla = document.getElementsByTagName("td");
+        // cargarEventosTdsTabla(tdsTabla);
     }
 }
 
@@ -101,6 +101,8 @@ function CrearTablaConDatos(datosTabla){
       tabla.appendChild(tr);
     })
     contenedorTabla.appendChild(tabla);
+    let tdsTabla = document.getElementsByTagName("td");
+    cargarEventosTdsTabla(tdsTabla);
 }
 
 
@@ -183,7 +185,7 @@ function VacunaFueAplicada(){
     let retorno;
     for (let index = 0; index < vacunas.length; index++) {
         const element = vacunas[index];
-        if(element.selected && element.value!="todos"){
+        if(element.selected && element.value!="todos" && element.value!="gato" && element.value!="perro"){
             retorno = element.value;
         }
     }
